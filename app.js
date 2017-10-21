@@ -17,10 +17,11 @@ var commentRoutes    = require("./routes/comments"),
     indexRoutes      = require("./routes/index")
 
 // Test environment    
-//mongoose.connect(process.env.DATABASEURL, {useMongoClient: true});
+mongoose.connect(process.env.DATABASEURL, {useMongoClient: true});
 
 // Production environment
-mongoose.connect("mongodb://amit.yahav90:utyf8kEc@ds127105.mlab.com:27105/yelpcamp-amit_yahav", {useMongoClient: true});
+//mongoose.connect("mongodb://amit.yahav90:utyf8kEc@ds127105.mlab.com:27105/yelpcamp-amit_yahav", {useMongoClient: true});
+
 mongoose.Promise = global.Promise;
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
